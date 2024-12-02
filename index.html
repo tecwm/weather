@@ -48,7 +48,7 @@
         .tempMax {
             color: red;
         }
-    #location{            width: 80%;
+    #location,#updatedate{            width: 80%;
         margin: 0 auto;
         background-color:rgba(229, 237, 255, 0.8);
         text-align: center;
@@ -205,7 +205,6 @@
 
         const dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-
         const weatherCodeList = new Array();
         const tempsMinList = new Array();
         const tempsMaxList = new Array();
@@ -254,7 +253,7 @@
                         const weekdayCount = (todayWeekdayCount + i) % 7;
                         if (weekdayCount === 0) { date[i].style.color = "red" };
                         if (weekdayCount === 6) { date[i].style.color = "blue" };
-                        date[i].textContent = "(" + dayList[weekdayCount] + ")";
+                        date[i].textContent =  dayList[weekdayCount] ;
                     }
                     var isNight = Number(i === 0 && !isTodaysData)
                     weatherImg[i].src = "https://www.jma.go.jp/bosai/forecast/img/" + weatherCode[el][isNight];
